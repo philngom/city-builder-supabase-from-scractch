@@ -38,6 +38,35 @@ export async function logout() {
     return window.location.href = '/';
 }
 
+export async function fetchCity() {
+    const response = await client
+        .from('city-builder')
+        .select()
+        .single();
+
+    return checkError(response);
+}
+
+export async function createDefaultCity(city) {
+    const response = await client
+        .from('city-builder')
+        .insert([city]);
+
+    return checkError(response);
+}
+
+export async function updateWaterfront(part, newWaterfront) {
+    const id = await getUser();
+    console.log(id);
+    const response = await client
+        .from('city-builder')
+        .update({ [part]: newWaterfront })
+        .match({ id: id.user.id })
+        .single();
+
+    return checkError(response);
+}
+
 function checkError({ data, error }) {
     return error ? console.error(error) : data;
 }

@@ -15,6 +15,7 @@
 
 <body>
     <main class="city">
+        <button id="logout">Logout</button>
         <h3>Welcome to <span class="city-name">Seattle</span></h3>
         <section class="images">
             <div class="waterfront-img-container">
@@ -24,7 +25,7 @@
         </section>
         <section class="dropdowns">
             <label for="waterline">Waterline
-                <select name="waterline">
+                <select name="waterline" class="waterline-dropdown">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -32,29 +33,30 @@
             </label>
 
             <label for="skyline">Skyline
-                <select name="skyline">
+                <select name="skyline" class="skyline-dropdown">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
             </label>
             <label for="castle">Castle
-                <select name="castle">
+                <select name="castle" class="castle-dropdown">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
             </label>
         </section>
-        <section class="slogans">
+        <section>
                 <form class="slogan-form">
                     Add a slogan!
                     <input type="text" name="slogan">
                     <button type="submit">Add</button>
                 </form>
+                <div class="slogans"></div>
         </section>
     </main>
-    <script type="module" src="./other-page.js"></script>
+    <script type="module" src="./city.js"></script>
 </body>
 
 </html>

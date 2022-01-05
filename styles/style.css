@@ -136,8 +136,9 @@ footer {
 }
 
 .images div {
-    width: 10rem;
-    height: 10rem;
+    background-position: center;
+    width: 15rem;
+    height: 15rem;
     border: 1px solid blue;
     margin: 4px;
     overflow: hidden;
@@ -149,6 +150,11 @@ footer {
 }
 
 img {
-    width: 15rem;
-    height: 10rem
+    /* width: 15rem; */
+    /* height: 10rem */
+}
+
+.logout-button {
+    position: relative;
+    float: right;
 }
