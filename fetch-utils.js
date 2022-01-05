@@ -50,18 +50,40 @@ export async function fetchCity() {
 export async function createDefaultCity(city) {
     const response = await client
         .from('city-builder')
-        .insert([city]);
+        .insert([{ ...city }]);
 
     return checkError(response);
 }
 
-export async function updateWaterfront(part, newWaterfront) {
+export async function updateWaterfront(part, selection) {
     const id = await getUser();
     console.log(id);
     const response = await client
         .from('city-builder')
-        .update({ [part]: newWaterfront })
-        .match({ id: id.user.id })
+        .update({ [part]: selection })
+        .match({ user_id: id.user.id })
+        .single();
+
+    return checkError(response);
+}
+
+export async function updateSlogans(newSlogans) {
+    const id = await getUser();
+    const response = await client
+        .from('city-builder')
+        .update({ slogans: newSlogans })
+        .match({ user_id: id.user.id })
+        .single();
+
+    return checkError(response);
+}
+
+export async function updateName(newName) {
+    const id = await getUser();
+    const response = await client
+        .from('city-builder')
+        .update({ city: newName })
+        .match({ user_id: id.user.id })
         .single();
 
     return checkError(response);

@@ -24,8 +24,8 @@
             <div class="castle-img-container"></div>
         </section>
         <section class="dropdowns">
-            <label for="waterline">Waterline
-                <select name="waterline" class="waterline-dropdown">
+            <label for="waterfront">Waterfront
+                <select name="waterfront" class="waterfront-dropdown">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -48,12 +48,19 @@
             </label>
         </section>
         <section>
+            <form class="city-name-form">
+                Update the city's name:
+                <input type="text" name="city-name">
+                <button type="submit">Update</button>
+            </form>
+        </section>
+        <section>
                 <form class="slogan-form">
                     Add a slogan!
                     <input type="text" name="slogan">
                     <button type="submit">Add</button>
                 </form>
-                <div class="slogans"></div>
+                <div class="slogans-container"></div>
         </section>
     </main>
     <script type="module" src="./city.js"></script>
